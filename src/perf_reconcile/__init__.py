@@ -7,8 +7,13 @@
 偏差四分类（每店贪心按日期匹配，全序确定性）：
 OK / MISS(缺访问) / OFF_PLAN(计划外) / DATE_DRIFT(日期漂移) / REP_MISMATCH(人店不符)
 """
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
+from perf_reconcile.ledger import (  # noqa: F401
+    GENESIS,
+    ActionLedger,
+    LedgerTamperError,
+)
 from perf_reconcile.reconcile import (  # noqa: F401
     CHECKIN_SCHEMA_VERSION,
     ActualCheckin,
@@ -20,5 +25,6 @@ from perf_reconcile.reconcile import (  # noqa: F401
 
 __all__ = [
     "CHECKIN_SCHEMA_VERSION", "ActualCheckin", "PlanVisit",
-    "ReconcileReport", "reconcile", "render_report", "__version__",
+    "ReconcileReport", "reconcile", "render_report",
+    "ActionLedger", "LedgerTamperError", "GENESIS", "__version__",
 ]
