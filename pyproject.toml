@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "perf-reconcile"
+version = "0.1.0"
+description = "计划-执行对照实体：plan_version_ref × 计划拜访 × 实际打卡 的偏差分类（模块④ WP27，stdlib-only）"
+requires-python = ">=3.10"
+license = { text = "Proprietary" }
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

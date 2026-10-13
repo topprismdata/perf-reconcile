@@ -1,0 +1,15 @@
+topprism:
+  purpose:
+    - performance-analytics
+  capability: plan-execution-reconcile
+  platform_layer: contract
+  # maturity 枚举(组织级四档): specification-frozen | experiment-validated | applied-component | certified-component
+  maturity: specification-frozen
+  evidence:
+    type: automated-test-suite
+    scope: >
+      CI 3.10+3.12; 8 tests：偏差四分类(MISS/OFF_PLAN/DATE_DRIFT/REP_MISMATCH)
+      消费式匹配+逐字节稳定报告+契约版本钉死。⚠️ 打卡 schema 为自定版本化
+      契约（CHECKIN_SCHEMA_VERSION=1.0），待 App 实际字段对齐（对齐=升 major）
+      ——故定 specification-frozen 而非 experiment-validated：无真实数据流可验。
+  customer_data_in_repo: false
